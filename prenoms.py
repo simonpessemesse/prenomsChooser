@@ -5,7 +5,7 @@ nom=input(" quel Nom Veux Tu Donner Au Resultat?   ")
 
 liste=[]
 import fileinput
-for line in fileinput.input():
+for line in fileinput.input("prenomsLave"):
     prenom=""
     i=0
     while(not line[i].isspace()):
