@@ -1,7 +1,28 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-prenoms=["Ael",
+nom=input(" quel Nom Veux Tu Donner Au Resultat?   ")
+
+liste=[]
+import fileinput
+for line in fileinput.input():
+    prenom=""
+    i=0
+    while(not line[i].isspace()):
+        prenom+=line[i]
+        i=i+1
+    liste.append(prenom)
+
+print(liste)
+import random
+random.shuffle(liste)
+print(liste)
+prenoms=liste
+
+
+
+
+prenom=["Ael",
 "Adriel",
 "Damián / Demian ",
 "Elio ",
@@ -37,5 +58,11 @@ def cilo(a,b):
 
 prenoms.sort(key=cmp_to_key(cilo))
 listeFinale=prenoms
+i=1
 for l in listeFinale:
+
     print(l)
+    i+=1
+with open(nom, 'w') as f:
+    for n in listeFinale:
+        print(n,file=f)
